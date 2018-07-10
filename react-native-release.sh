@@ -1,6 +1,6 @@
 #!/bin/bash
 # Author:       Alexsander Falcucci
-# Usage:        . ./releaser.sh
+# Usage:        . ./react-native-release.sh
 # Description:  Script to generate and push new tags on Github
 #               and changelog automatically. Use it always to releases.
 
@@ -23,7 +23,6 @@ HAS_REACT_NATIVE_VERSION="$(program_is_installed react-native-version)"
 
 while :
 do
-
   if [ "$HAS_CHANGELOG_GENERATOR" == "0" ]
   then
     echo "Please, install https://github.com/github-changelog-generator/github-changelog-generator"
@@ -69,7 +68,6 @@ do
   # generate github release based on changelog
   NEW_TAG=`eval 'git describe --tags $(git rev-list --tags --max-count=1)'`
   chandler push $NEW_TAG
-
   break
 done
 
