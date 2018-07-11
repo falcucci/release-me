@@ -37,20 +37,17 @@ do
     break
   fi
 
-
   if [ "$HAS_CHANGELOG_CHANDLER" == "0" ]
   then
     echo "Please, install https://github.com/mattbrictson/chandler"
     break
   fi
 
-
   if [ "$CHANDLER_GITHUB_API_TOKEN" == "" ]
   then
     echo "Please, generate and add an api token https://github.com/mattbrictson/chandler#option-2---set-env-variables"
     break
   fi
-
 
   if [ "$CHANGELOG_GITHUB_TOKEN" == "" ]
   then
@@ -64,12 +61,11 @@ do
   # bugfix to remove the first line of the your current changelog
   tail -n +2 "./CHANGELOG.md" > "./CHANGELOG.tmp" && mv "./CHANGELOG.tmp" "./CHANGELOG.md"
 
-
   repo_url="`git remote get-url origin`"
   user=`echo ${repo_url} | cut -d ":" -f2 | cut -d "/" -f1`
   repo=${repo_url##*/}
 
-
+  # generate changelog automatically
   github_changelog_generator -u ${user} -p ${repo%%.*} \
   --enhancement-label ":rocket: **New Feature**" \
   --bugs-label ":bug: **Bug Fix**" \
@@ -78,10 +74,8 @@ do
   --exclude-labels 'duplicate,question,invalid,wontfix,ignore,changelog ignore' \
   --base CHANGELOG.md -t ${CHANGELOG_GITHUB_TOKEN}
 
-
   git commit -am ":book: update changelog"
   git push origin master
-
 
   # generate github release based on changelog
   NEW_TAG=`eval 'git describe --tags $(git rev-list --tags --max-count=1)'`
