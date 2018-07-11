@@ -14,3 +14,4 @@ or your could put it on your `package.json` as follows:
 }
 ```
 
+That's it! :sparkles:
