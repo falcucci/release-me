@@ -49,6 +49,9 @@ do
 
   npm version patch
   git push origin master --tags
+  
+  # bugfix to remote the first line of the your current changelog
+  tail -n +2 "./CHANGELOG.md" > "./CHANGELOG.tmp" && mv "./CHANGELOG.tmp" "./CHANGELOG.md"
 
   repo_url="`git remote get-url origin`"
   user=`echo ${repo_url} | cut -d ":" -f2 | cut -d "/" -f1`
