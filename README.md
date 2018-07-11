@@ -26,7 +26,7 @@ or just put it on your `package.json` as follows:
 
 ```json
 {
-  "scripts: {
+  "scripts": {
     "publish": "curl -LsS https://raw.githubusercontent.com/falcucci/release-me/master/react-native-release.sh | bash -s"
   }
 }
