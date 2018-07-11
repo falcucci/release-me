@@ -2,7 +2,7 @@
 
 ### What is it? :bulb:
 
-It's just useful scripts to make our work when we talk about changelogs, releases and build automation like `APK's` generation and sending it into `google drive'`s folders. It also could be a `gist` but obviously I want to put other scripts related of it as I need here.
+It's just useful scripts to make our work when we talk about changelogs, releases and build automation like `APK's` generation and send it into `google drive'`s folders. It also could be a `gist` but obviously I want to put other scripts related of it as I need here.
 
 ## Requirements 
 
