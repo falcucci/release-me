@@ -20,3 +20,7 @@ or just put it on your `package.json` as follows:
 ```
 
 That's it! :sparkles:
+
+## License
+
+The code is available under the [MIT license](LICENSE).
