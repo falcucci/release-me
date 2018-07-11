@@ -4,7 +4,6 @@
 # Description:  Script to generate and push new tags on Github
 #               and changelog automatically. Use it always to releases.
 
-
 # return 1 if global command line program installed, else 0
 function program_is_installed {
   # set to 1 initially
@@ -15,16 +14,13 @@ function program_is_installed {
   echo "$return_"
 }
 
-
 TAG=`eval 'git describe --tags $(git rev-list --tags --max-count=1)'`
 echo "latest tag $TAG"
-
 
 HAS_CHANGELOG_GENERATOR="$(program_is_installed github_changelog_generator)"
 HAS_CHANGELOG_CHANDLER="$(program_is_installed chandler)"
 HAS_REACT_NATIVE_VERSION="$(program_is_installed react-native-version)"
 SEMANTIC_VERSION=$1
-
 
 while :
 do
