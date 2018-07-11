@@ -18,7 +18,7 @@ Before to start to use it, please install the following dependencies:
 
 ## react-native script
 
-Basically it uses some libraries to make the automation and currently could be executed from your `terminal` by the following snippet: 
+Basically it uses the libraries above to make the automation and currently could be executed from your `terminal` by the following snippet: 
 ```shell
 bash -c "$(curl -LsS https://raw.githubusercontent.com/falcucci/release-me/master/react-native-release.sh)"
 ```
