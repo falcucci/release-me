@@ -58,9 +58,6 @@ do
     break
   fi
 
-
-
-
   npm version $SEMANTIC_VERSION
   git push origin master --tags
 
