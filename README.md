@@ -6,7 +6,7 @@ Basically it uses some libraries to make the automation and currently could be e
 ```shell
 bash -c "$(curl -LsS https://raw.githubusercontent.com/falcucci/release-me/master/react-native-release.sh)"
 ```
-or your could put it on your `package.json` as follows:
+or just put it on your `package.json` as follows:
 
 ```json
 {
