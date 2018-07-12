@@ -36,7 +36,7 @@ Before to start to use it, please install the following dependencies:
 
 * [gdrive](https://github.com/prasmussen/gdrive)
 
-The script will build your `APK` file and send it for you google drive folder to manage your versions. For now you could add a npm script at your `package.json` as follows:
+The script will build your `APK` file and send it for your google drive folder to manage your versions. For now you could add a npm script at your `package.json` as follows:
 ```json
 {
   "scripts": {
