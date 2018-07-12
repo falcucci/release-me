@@ -1,12 +1,12 @@
 # Release-me 
 
-### What is it? :bulb:
+## What is it? :bulb:
 
 It's just useful scripts to make our work when we talk about changelogs, releases and build automation like `APK's` generation and send it into `google drive'`s folders. It also could be a `gist` but obviously I want to put other scripts related of it as I need here.
 
-## Requirements
+# Requirements
 
-### Config to use `react-native-release.sh` script
+## Config to use `react-native-release.sh` script
 
 Before to start to use it, please install the following dependencies:
 
@@ -30,11 +30,11 @@ or just put it on your `package.json` as follows:
 }
 ```
 
-### Config to use `apk-builder.sh` script
+## Config to use `apk-builder.sh` script
 
 Before to start to use it, please install the following dependencies:
 
-* (gdrive)[https://github.com/prasmussen/gdrive]
+* [gdrive](https://github.com/prasmussen/gdrive)
 
 Now you could add a npm script at your `package.json` as follows:
 ```json
