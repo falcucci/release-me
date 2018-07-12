@@ -45,7 +45,7 @@ The script will build your `APK` file and send it for your google drive folder t
 }
 ```
 
-Also, read how [gdrive](https://github.com/prasmussen/gdrive) works and add the `GOOGLE_DRIVE_FOLDER_ID` variable at your `.env.<environment>` file as your google drive folder identifier. If you have two folder, put each one in the related `.env`.
+Also, read how [gdrive](https://github.com/prasmussen/gdrive) works and add the `GOOGLE_DRIVE_FOLDER_ID` variable at your `.env.<environment>` file as your google drive folder identifier. If you have two folders for example, put it on each one in the related `.env`.
 
 That's it! :sparkles:
 
