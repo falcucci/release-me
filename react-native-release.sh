@@ -15,7 +15,7 @@ function program_is_installed {
 }
 
 # update all tags
-git pull upstream --tags
+git pull origin --tags
 
 TAG=`eval 'git describe --tags $(git rev-list --tags --max-count=1)'`
 echo "latest tag $TAG"
