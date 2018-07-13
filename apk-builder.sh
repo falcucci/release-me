@@ -74,7 +74,7 @@ do
 
   APK=./app/build/outputs/apk/release/app-release.apk
 
-  if [ -f $APK && $HAS_GDRIVE == "1" ]; then
+  if [ -f $APK ]; then
     gdrive \
       upload $APK \
       --name "${APP}-${TAG}-${environment}-.apk" \
