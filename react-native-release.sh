@@ -75,7 +75,8 @@ do
   --no-pull-requests \
   --enhancement-labels 'enhancement,Enhancement,features,Features,feature' \
   --exclude-labels 'duplicate,question,invalid,wontfix,ignore,changelog ignore' \
-  --base CHANGELOG.md -t ${CHANGELOG_GITHUB_TOKEN}
+  --base CHANGELOG.md \
+  --token ${CHANGELOG_GITHUB_TOKEN}
 
   git commit -am ":book: update changelog"
   git push origin master
