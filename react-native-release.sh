@@ -3,6 +3,15 @@
 # Usage:        . ./react-native-release.sh
 # Description:  Script to generate and push new tags on Github
 #               and changelog automatically. Use it always to releases.
+BBlack='\033[1;30m'       # Black
+BRed='\033[1;31m'         # Red
+BGreen='\033[1;32m'       # Green
+BYellow='\033[1;33m'      # Yellow
+BBlue='\033[1;34m'        # Blue
+BPurple='\033[1;35m'      # Purple
+BCyan='\033[1;36m'        # Cyan
+BWhite='\033[1;37m'       # White
+RESET='\033[0m'
 
 # return 1 if global command line program installed, else 0
 function program_is_installed {
@@ -20,9 +29,11 @@ git pull origin --tags
 TAG=`eval 'git describe --tags $(git rev-list --tags --max-count=1)'`
 echo "latest tag $TAG"
 
+REACT_PACKAGE="require('./package.json').dependencies['react-native']"
 HAS_CHANGELOG_GENERATOR="$(program_is_installed github_changelog_generator)"
 HAS_CHANGELOG_CHANDLER="$(program_is_installed chandler)"
 HAS_REACT_NATIVE_VERSION="$(program_is_installed react-native-version)"
+HAS_NODE="$(program_is_installed node)"
 SEMANTIC_VERSION=$1
 
 while :
@@ -32,6 +43,12 @@ do
       echo "\nPlease, give the correct params.\n"
       echo "Semantic Versioning specification is missing!"
       break
+  fi
+
+  if [ "$HAS_NODE" == "0" ]
+  then
+    echo "Please, install node-js https://nodejs.org/en/download/"
+    break
   fi
 
   if [ "$HAS_CHANGELOG_GENERATOR" == "0" ]
@@ -56,6 +73,18 @@ do
   then
     echo "Please, generate and add an api token https://github.com/github-changelog-generator/github-changelog-generator#github-token"
     break
+  fi
+
+  IS_REACT_NATIVE=`node -pe ${REACT_PACKAGE}`
+  if [ $? -eq 0 ]; then
+      if [ "$IS_REACT_NATIVE" != "undefined" ]
+      then
+          if [ "$HAS_REACT_NATIVE_VERSION" == "0" ]
+          then
+              echo -e "Please, install ${BGreen}npm i -g react-native-version${RESET}"
+              break
+          fi
+      fi
   fi
 
   npm version $SEMANTIC_VERSION
