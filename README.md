@@ -6,7 +6,7 @@ It's just useful scripts to make our work when we talk about changelogs, release
 
 # Requirements
 
-## Config to use `react-native-release.sh` script
+## Config to use `release.sh` script
 
 Before to start to use it, please install the following dependencies:
 
@@ -25,7 +25,7 @@ or just put it on your `package.json` as follows:
 ```json
 {
   "scripts": {
-    "publish": "curl -LsS https://raw.githubusercontent.com/falcucci/release-me/master/react-native-release.sh | bash -s"
+    "publish": "curl -LsS https://raw.githubusercontent.com/falcucci/release-me/master/release.sh | bash -s"
   }
 }
 ```
