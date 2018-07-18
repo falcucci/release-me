@@ -18,7 +18,7 @@ Before to start to use it, please install the following dependencies:
 
 Basically it uses the libraries above to make the automation and currently could be executed from your `terminal` by the following snippet: 
 ```shell
-bash -c "$(curl -LsS https://raw.githubusercontent.com/falcucci/release-me/master/react-native-release.sh)"
+bash -c "$(curl -LsS https://raw.githubusercontent.com/falcucci/release-me/master/release.sh)"
 ```
 or just put it on your `package.json` as follows:
 
