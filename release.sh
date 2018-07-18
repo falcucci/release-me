@@ -1,6 +1,6 @@
 #!/bin/bash
 # Author:       Alexsander Falcucci
-# Usage:        . ./react-native-release.sh
+# Usage:        . ./release.sh
 # Description:  Script to generate and push new tags on Github
 #               and changelog automatically. Use it always to releases.
 BBlack='\033[1;30m'       # Black
