@@ -47,7 +47,7 @@ do
 
   if [ "$HAS_NODE" == "0" ]
   then
-    echo "Please, install node-js https://nodejs.org/en/download/"
+    echo "Please, install nodejs https://nodejs.org/en/download/"
     break
   fi
 
