@@ -47,6 +47,10 @@ The script will build your `APK` file and send it for your google drive folder t
 
 Also, read how [gdrive](https://github.com/prasmussen/gdrive) works and add the `GOOGLE_DRIVE_FOLDER_ID` variable at your `.env.<environment>` file as your google drive folder identifier. If you have two folders for example, put it on each one in the related `.env`.
 
+## Notifications
+
+We have a script to avoid you to visit [One Signal](https://onesignal.com/) every time to send and debug a `push-notification`. Firstly get the `TEMPLATE_ID` value and put it in your `.env` environment file. The `template_id` is the UUID found in the URL when viewing a template on our dashboard. Secondly get your `PLAYER_ID` [here](https://documentation.onesignal.com/docs/player-id).
+
 That's it! :sparkles:
 
 ## License
