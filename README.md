@@ -51,6 +51,8 @@ Also, read how [gdrive](https://github.com/prasmussen/gdrive) works and add the 
 
 We have a script to avoid you to visit [One Signal](https://onesignal.com/) every time to send and debug a `push-notification`. Firstly get the `TEMPLATE_ID` value and put it in your `.env` environment file. The `template_id` is the UUID found in the URL when viewing a template on our dashboard. Secondly get your `PLAYER_ID` [here](https://documentation.onesignal.com/docs/player-id).
 
+So, with that variables already setted just run `npm run notification <player_id>
+
 ```json
 {
   "scripts": {
