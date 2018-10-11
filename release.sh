@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # Author:       Alexsander Falcucci
 # Usage:        . ./release.sh
 # Description:  Script to generate and push new tags on Github
@@ -12,6 +13,12 @@ BPurple='\033[1;35m'      # Purple
 BCyan='\033[1;36m'        # Cyan
 BWhite='\033[1;37m'       # White
 RESET='\033[0m'
+
+REMOTE="origin"
+git remote | grep upstream
+if [[ $? -eq "upstream" ]]; then
+  REMOTE="upstream"
+fi
 
 # return 1 if global command line program installed, else 0
 function program_is_installed {
@@ -88,12 +95,12 @@ do
   fi
 
   npm version $SEMANTIC_VERSION
-  git push origin master --tags
+  git push $REMOTE master --tags
 
   # bugfix to remove the first line of the your current changelog
   tail -n +2 "./CHANGELOG.md" > "./CHANGELOG.tmp" && mv "./CHANGELOG.tmp" "./CHANGELOG.md"
 
-  repo_url="`git remote get-url origin`"
+  repo_url="`git remote get-url $REMOTE`"
   user=`echo ${repo_url} | cut -d ":" -f2 | cut -d "/" -f1`
   repo=${repo_url##*/}
 
@@ -108,7 +115,8 @@ do
   --token ${CHANGELOG_GITHUB_TOKEN}
 
   git commit -am ":book: update changelog"
-  git push origin master
+
+  git push $REMOTE master
 
   # generate github release based on changelog
   NEW_TAG=`eval 'git describe --tags $(git rev-list --tags --max-count=1)'`

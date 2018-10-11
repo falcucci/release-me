@@ -15,6 +15,13 @@ BCyan='\033[1;36m'        # Cyan
 BWhite='\033[1;37m'       # White
 RESET='\033[0m'
 
+
+REMOTE="origin"
+git remote | grep upstream
+if [[ $? -eq "upstream" ]]; then
+  REMOTE="upstream"
+fi
+
 # return 1 if global command line program installed, else 0
 function program_is_installed {
   # set to 1 initially
@@ -64,7 +71,7 @@ do
   fi
 
   # update all tags
-  git pull origin --tags
+  git pull $REMOTE --tags
 
   TAG=`eval 'git describe --tags $(git rev-list --tags --max-count=1)'`
   echo "latest tag $TAG"
