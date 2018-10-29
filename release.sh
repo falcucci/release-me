@@ -120,6 +120,6 @@ do
 
   # generate github release based on changelog
   NEW_TAG=`eval 'git describe --tags $(git rev-list --tags --max-count=1)'`
-  chandler push $NEW_TAG
+  chandler push $NEW_TAG --github=$user/${repo%%.*}
   break
 done
