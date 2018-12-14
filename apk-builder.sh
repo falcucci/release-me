@@ -85,7 +85,15 @@ do
     gdrive \
       upload $APK \
       --name "${APP}-${TAG}-${environment}-.apk" \
+<<<<<<< HEAD
       --mime application/vnd.android.package-archive \
+=======
+<<<<<<< HEAD
+      --mime application/vnd.android.package-archive \
+=======
+      --mime application/vnd.android.package-hive \
+>>>>>>> 8e64cb6aa3ef58d9163146c59638361b89b19194
+>>>>>>> e8d7b6274c5371e4d098037e8ba8a75b04fe2a7b
       -p $GOOGLE_DRIVE_FOLDER_ID
     cd ..
   fi
