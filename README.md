@@ -8,7 +8,7 @@ It's just useful scripts to make our work when we talk about changelogs, release
 
 ## Config to use `changelog-it.sh`
 
-* changelog-it - `npm i -g @falcucci/changelog-it@1.5.1`
+* `npm i -g @falcucci/changelog-it@1.5.1`
 
 The most useful script integrated with [gitlab]() and [jira]() so far.
 
