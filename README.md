@@ -63,7 +63,7 @@ So, with that variables already setted just run `npm run notification <player_id
 
 ## Config to use `changelog-it.sh`
 
-* `npm i -g @falcucci/changelog-it@1.5.1`
+* `npm i -g -S @falcucci/changelog-it@1.5.3`
 
 The most useful script integrated with [gitlab]() and [jira]() so far.
 
@@ -71,6 +71,7 @@ The most useful script integrated with [gitlab]() and [jira]() so far.
 curl -LsS https://raw.githubusercontent.com/falcucci/release-me/master/changelog-it.sh | bash -s <semantic-version> <summary>
 ```
 
+Please, check it out (how to configure) your channels, templates and more in the [changelog-it](https://github.com/falcucci/jira-changelog) README.
 
 That's it! :sparkles:
 
