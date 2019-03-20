@@ -6,16 +6,6 @@ It's just useful scripts to make our work when we talk about changelogs, release
 
 # Requirements
 
-## Config to use `changelog-it.sh`
-
-* `npm i -g @falcucci/changelog-it@1.5.1`
-
-The most useful script integrated with [gitlab]() and [jira]() so far.
-
-```bash
-curl -LsS https://raw.githubusercontent.com/falcucci/release-me/master/changelog-it.sh | bash -s <semantic-version> <summary>
-```
-
 ## Config to use `release.sh` script
 
 Before to start to use it, please install the following dependencies:
@@ -70,6 +60,17 @@ So, with that variables already setted just run `npm run notification <player_id
   }
 }
 ```
+
+## Config to use `changelog-it.sh`
+
+* `npm i -g @falcucci/changelog-it@1.5.1`
+
+The most useful script integrated with [gitlab]() and [jira]() so far.
+
+```bash
+curl -LsS https://raw.githubusercontent.com/falcucci/release-me/master/changelog-it.sh | bash -s <semantic-version> <summary>
+```
+
 
 That's it! :sparkles:
 
