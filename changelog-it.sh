@@ -67,7 +67,7 @@ do
   if [ "$NTAG" != $TAG ]
   then
     echo "new tag $NTAG"
-    node /Users/falcucci/for-me/jira-changelog/dist/cli.js --range ${TAG}...origin/master --release ${NTAG} --slack --summary "$SUMMARY"
+    changelog-it --range ${TAG}...origin/master --release ${NTAG} --slack --summary "$SUMMARY"
   fi
 
   break
