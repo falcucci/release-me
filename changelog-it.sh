@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Author:       Alexsander Falcucci
-# Usage:        . ./release.sh
+# Usage:        . ./changelog-it.sh
 # Description:  Script to generate and push new tags on Github
 #               and changelog automatically. Use it always to releases.
 BBlack='\033[1;30m'       # Black
@@ -33,13 +33,9 @@ function program_is_installed {
 # update all tags
 git fetch --all
 
-TAG=`eval 'git describe --tags $(git rev-list --tags --max-count=1)'`
+TAG=`eval 'git describe --abbrev=0 --tags $(git rev-list --tags --skip=1 --max-count=1)'`
 echo "latest tag $TAG"
 
-# REACT_PACKAGE="require('./package.json').dependencies['react-native']"
-# HAS_CHANGELOG_GENERATOR="$(program_is_installed github_changelog_generator)"
-# HAS_CHANGELOG_CHANDLER="$(program_is_installed chandler)"
-# HAS_REACT_NATIVE_VERSION="$(program_is_installed react-native-version)"
 HAS_NODE="$(program_is_installed node)"
 SEMANTIC_VERSION=$1
 SUMMARY=$2
