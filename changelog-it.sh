@@ -60,7 +60,7 @@ do
   if [ "$NTAG" != $TAG ]
   then
     echo "new tag $NTAG"
-    changelog-it --range ${TAG}...${NTAG} --release ${NTAG}
+    changelog-it --range ${TAG}...${NTAG} --release --gmud
     # changelog-it --range ${TAG}...origin/master --release ${NTAG} --slack --summary "$SUMMARY"
   fi
 
