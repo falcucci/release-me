@@ -46,11 +46,10 @@ SUMMARY=$2
 #
 while :
 do
-  if [ "$SEMANTIC_VERSION" == "" ]
+  if [ "$SEMANTIC_VERSION" != "" ]
   then
-      echo "Please, give the correct params."
-      echo "Semantic Versioning specification is missing!"
-      break
+      # force to create a semantic version and publish to gitlab
+      curl -LsS https://raw.githubusercontent.com/falcucci/versiontag/master/versiontag.sh | bash -s $SEMANTIC_VERSION --force
   fi
 
   if [ "$HAS_NODE" == "0" ]
@@ -59,9 +58,7 @@ do
     break
   fi
 
-  # force to create a semantic version and publish to gitlab
-  curl -LsS https://raw.githubusercontent.com/falcucci/versiontag/master/versiontag.sh | bash -s $SEMANTIC_VERSION --force
-
+  
   NTAG=`eval 'git describe --tags $(git rev-list --tags --max-count=1)'`
 
   if [ "$NTAG" != $TAG ]
