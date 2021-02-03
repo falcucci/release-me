@@ -15,10 +15,10 @@ nvm install 10.18.1
 
 cd $CI_PROJECT_DIR
 
-npm config set user 0
-npm config set unsafe-perm true
+# npm config set user 0
+# npm config set unsafe-perm true
 
-npm install -g npm
+# npm install -g npm
 
 npm i -g @falcucci/changelog-it@latest
 
