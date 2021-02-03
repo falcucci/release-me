@@ -18,6 +18,8 @@ cd $CI_PROJECT_DIR
 npm config set user 0
 npm config set unsafe-perm true
 
+npm install -g npm
+
 npm i -g @falcucci/changelog-it@latest
 
 TAG=`eval 'git describe --abbrev=0 --tags $(git rev-list --tags --skip=1 --max-count=1)'`
