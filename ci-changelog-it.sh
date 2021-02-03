@@ -18,6 +18,10 @@ cd $CI_PROJECT_DIR
 npm config set user 0
 npm config set unsafe-perm true
 
+npm_config_user=root
+
+npm install node
+
 # npm install -g npm
 
 npm i -g @falcucci/changelog-it@latest
