@@ -22,8 +22,6 @@ npm_config_user=root
 
 npm install node
 
-# npm install -g npm
-
 npm i -g @falcucci/changelog-it@latest
 
 TAG=`eval 'git describe --abbrev=0 --tags $(git rev-list --tags --skip=1 --max-count=1)'`
